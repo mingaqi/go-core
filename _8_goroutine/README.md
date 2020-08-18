@@ -1,6 +1,9 @@
 [goroutine和并发相关](https://www.liwenzhou.com/posts/Go/14_concurrence/) <br>
-[GMP调度模型](https://studygolang.com/articles/9610) <br>
-[GMP模型](https://studygolang.com/articles/26921?fr=sidebar) <br>
+
+[[典藏版]GMP模型](https://www.jianshu.com/p/fa696563c38a) <br>
+[B站视频讲解](https://www.bilibili.com/video/BV1jT4y1j7Cd)
+
+**CSP通过通信来共享内存，而非通过共享内存来通信**
 ### 并行和并发
 并发: 同一时间段内执行多个任务(你和两个女朋友用微信聊天)
 并行: 同一时刻执行多个任务(你和朋友都在用微信和女朋友聊天)

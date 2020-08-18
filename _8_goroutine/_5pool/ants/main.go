@@ -10,6 +10,7 @@ import (
 )
 
 // ants:https://github.com/panjf2000/ants/blob/master/README_ZH.md
+// 作者blog:https://taohuawu.club/high-performance-implementation-of-goroutine-pool
 var sum int32
 
 func myFunc(i interface{}) {
