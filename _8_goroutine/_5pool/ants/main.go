@@ -9,6 +9,7 @@ import (
 	"github.com/panjf2000/ants/v2"
 )
 
+// ants:https://github.com/panjf2000/ants/blob/master/README_ZH.md
 var sum int32
 
 func myFunc(i interface{}) {
@@ -41,6 +42,7 @@ func main() {
 	fmt.Printf("running goroutines: %d\n", ants.Running())
 	fmt.Printf("finish all tasks.\n")
 
+	//------------------------------------------------------------------------------------------------------
 	// Use the pool with a function,
 	// set 10 to the capacity of goroutine pool and 1 second for expired duration.
 	p, _ := ants.NewPoolWithFunc(10, func(i interface{}) {
