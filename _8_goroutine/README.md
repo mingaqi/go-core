@@ -1,8 +1,5 @@
-[goroutine和并发相关](https://www.liwenzhou.com/posts/Go/14_concurrence/) 
-
 [[典藏版]GMP模型](https://www.jianshu.com/p/fa696563c38a)
-
-[B站视频讲解](https://www.bilibili.com/video/BV1jT4y1j7Cd)
+[B站视频讲解GMP](https://www.bilibili.com/video/BV1jT4y1j7Cd)
 
 [ants协程池和GMP](https://taohuawu.club/high-performance-implementation-of-goroutine-pool)
 
