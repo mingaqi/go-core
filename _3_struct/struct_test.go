@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 结构体占用一块练习的内存
+// 结构体占用一块连续的内存
 // https://www.liwenzhou.com/posts/Go/10_struct/
 func TestStruct(t *testing.T) {
 	// 匿名结构体

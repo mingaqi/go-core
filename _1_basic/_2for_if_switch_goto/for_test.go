@@ -14,6 +14,7 @@ func TestFor(t *testing.T) {
 
 	for {
 		fmt.Println()
+		break
 	}
 
 	s := "hello, 小萝卜"
@@ -76,4 +77,21 @@ func TestGoto(t *testing.T) {
 	}
 label:
 	fmt.Printf("jump to label")
+}
+
+// range 陷阱
+// 临时变量val每次的地址都不会变
+// 所以 循环最后一次指向3的地址  导致map中所有元素都为3
+func TestRange(t *testing.T) {
+	slice := []int{0, 1, 2, 3}
+	m := make(map[int]*int)
+
+	for key, val := range slice {
+		//a := val
+		m[key] = &val
+		fmt.Printf("%p \n", &val)
+	}
+	for k, v := range m {
+		fmt.Println(k, "->", *v)
+	}
 }
