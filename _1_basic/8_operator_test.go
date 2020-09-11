@@ -12,7 +12,7 @@ import (
 // 12 --> 12除2商6于0  低位是0  依次用商除2取余  1100
 func TestOperator(t *testing.T) {
 
-	// & 与 两位相同为1
+	// & 与 两位相同为1 不同为0
 	fmt.Println(0&0, 0&1, 1&1)
 
 	// | 或 两位有1为1
@@ -27,5 +27,9 @@ func TestOperator(t *testing.T) {
 
 	// >> 右移位  高位补0或者1 除以2的n次方
 	fmt.Println(60 >> 2)
+
+	//
+	var c = [5]int{2: 3, 4: 67}
+	fmt.Println(c)
 
 }

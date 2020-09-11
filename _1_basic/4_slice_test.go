@@ -64,4 +64,8 @@ func TestSort(t *testing.T) {
 	a := [...]int{1, 3, 5, 7, 9, 2, 3, 4}
 	sort.Ints(a[:])
 	fmt.Println(a)
+
+	// :前代表位置 后代表值
+	var c = [5]int{2: 3, 4: 67}
+	fmt.Println(c)
 }
