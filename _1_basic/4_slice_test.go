@@ -46,13 +46,13 @@ func TestCopy(t *testing.T) {
 
 /*
 del
-切片操作是才操作底层数组,  切片不存值, 只存第一个元素地址 len cap
+切片操作是操作底层数组,  切片不存值, 只存第一个元素地址 len cap
 */
 func TestDel(t *testing.T) {
-	a := [...]int{1, 3, 5, 7, 9}
+	a := [...]int{1, 3, 5, 7, 5}
 	s1 := a[:]
 
-	s1 = append(s1[:1], s1[2:]...)
+	s1 = append(s1[:1], s1[2:4]...)
 	fmt.Printf("s1:%v,len:%d, cap:%d \n", s1, len(s1), cap(s1))
 	fmt.Println("底层切片:", a)
 
