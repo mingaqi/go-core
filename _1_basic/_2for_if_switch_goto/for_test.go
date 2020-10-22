@@ -91,6 +91,7 @@ func TestRange(t *testing.T) {
 		m[key] = &val
 		fmt.Printf("%p \n", &val)
 	}
+	fmt.Print(m)
 	for k, v := range m {
 		fmt.Println(k, "->", *v)
 	}

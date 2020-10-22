@@ -16,6 +16,7 @@ func TestTime(t *testing.T) {
 	// 时间戳
 	fmt.Println(now.Unix())           //s
 	fmt.Println(now.UnixNano() / 1e6) //ms
+	fmt.Println(now.UnixNano() / 1e3) //μs
 	fmt.Println(now.UnixNano())       //ns
 
 	// 时间计算
@@ -38,8 +39,8 @@ func TestTime(t *testing.T) {
 	time.Sleep(time.Duration(n) * time.Second)
 
 	// 定时器
-	timer := time.Tick(time.Second)
+	/*timer := time.Tick(time.Second)
 	for t := range timer {
 		fmt.Println(t)
-	}
+	}*/
 }
