@@ -13,6 +13,7 @@ type Person struct {
 
 // interface在golang内部其实是一个结构体，有_type,data两个指针组成
 // https://studygolang.com/articles/1749
+// https://studygolang.com/articles/5730
 //
 func TestNil(t *testing.T) {
 	var man *Person = nil
