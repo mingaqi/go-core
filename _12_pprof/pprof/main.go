@@ -16,7 +16,7 @@ func logicCode() {
 		case v := <-c:
 			fmt.Printf("recv from chan, value:%v\n", v)
 		default:
-			//time.Sleep(time.Millisecond * 50)
+			time.Sleep(time.Millisecond * 50)
 		}
 	}
 }
@@ -32,6 +32,8 @@ func logicCode() {
 // 	cum%：当前函数加上调用当前函数的函数占用CPU的总耗时百分比
 
 // list logicCode 函数的详细分析
+
+// gin中使用pprof http://liumurong.org/2019/12/gin_pprof/
 func main() {
 	var isCPUPprof bool
 	var isMemPprof bool
