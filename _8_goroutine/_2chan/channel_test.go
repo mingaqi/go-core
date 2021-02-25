@@ -57,7 +57,7 @@ func TestRun(t *testing.T) {
 	Run()
 }
 
-//
+//  一个协程生产随机数  一个协程读   借助channel实现
 func TestRand(t *testing.T) {
 	output := make(chan int)
 	var wg sync.WaitGroup
