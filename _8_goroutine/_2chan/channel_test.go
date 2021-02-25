@@ -2,6 +2,7 @@ package _2chan
 
 import (
 	"fmt"
+	"math/rand"
 	"sync"
 	"testing"
 )
@@ -22,7 +23,7 @@ func TestChannel(t *testing.T) {
 		wg.Done()
 	}()
 
-	c <- 10 // 先写数据会发生阻塞 deadlock
+	c <- 10 // 先写数据会发生阻塞 deadlock  无缓存channel写入数据会发生阻塞
 	wg.Wait()
 	close(c)
 
@@ -31,10 +32,10 @@ func TestChannel(t *testing.T) {
 	c <- 1
 	c <- 2
 	c <- 3
+	close(c) // close后还能接受数据
 	fmt.Println(<-c)
 	fmt.Println(<-c)
 	fmt.Println(<-c)
-	close(c)
 
 	/*--------------------------------------*/
 	// 单向channel 多用于函数参数中, 用于限制函数对channel的操作(只能只读和只写)
@@ -54,4 +55,30 @@ func TestChannel(t *testing.T) {
 
 func TestRun(t *testing.T) {
 	Run()
+}
+
+//
+func TestRand(t *testing.T) {
+	output := make(chan int)
+	var wg sync.WaitGroup
+
+	randFunc := func() {
+		defer wg.Done()
+		for i := 0; i < 5; i++ {
+			output <- rand.Intn(10)
+		}
+		close(output)
+	}
+
+	wg.Add(2)
+	go randFunc()
+	go func() {
+		defer wg.Done()
+
+		for i := range output {
+			fmt.Println(i)
+		}
+
+	}()
+	wg.Wait()
 }
