@@ -6,6 +6,9 @@ import (
 	"testing"
 )
 
+// 反射原理
+// http://wen.topgoer.com/docs/gozhuanjia/chapter066.1-reflect
+
 // typeOf 和 valueOf
 // value对象能获取到type类型, 而type类型不能取到值
 
