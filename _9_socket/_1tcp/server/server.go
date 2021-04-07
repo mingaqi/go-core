@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// 1. 启动服务, 监听端口
-	listenServe, err := net.Listen("_1tcp", "127.0.0.1:20000")
+	listenServe, err := net.Listen("tcp", "127.0.0.1:20000")
 	if err != nil {
 		fmt.Println("occurred err:", err)
 		return

@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	conn, err := net.Dial("_1tcp", "127.0.0.1:20000")
+	conn, err := net.Dial("tcp", "127.0.0.1:20000")
 
 	if err != nil {
 		fmt.Println(err)
@@ -24,6 +24,7 @@ func main() {
 			break
 		}
 		conn.Write([]byte(msg))
-	}
 
+	}
+	conn.Close()
 }
