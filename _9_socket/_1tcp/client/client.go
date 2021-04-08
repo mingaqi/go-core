@@ -16,15 +16,17 @@ func main() {
 	}
 
 	reader := bufio.NewReader(os.Stdin)
+loop:
 	for {
 		fmt.Print("say:")
 		msg, _ := reader.ReadString('\n')
 
-		if msg == "exit" {
-			break
+		if msg == "exit\n" {
+			break loop
 		}
 		conn.Write([]byte(msg))
 
 	}
 	conn.Close()
+
 }
