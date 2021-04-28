@@ -3,7 +3,6 @@ package practise
 import (
 	"fmt"
 	"math/rand"
-	"strings"
 	"testing"
 	"time"
 )
@@ -15,7 +14,7 @@ import (
 // 100元 10个红包  第一个人随机范围在 10*2
 func TestHb(t *testing.T) {
 	// 金额 红包个数
-	var amount, count int64 = 100, 10
+	var amount, count int64 = 10000, 10
 	// 验证数据
 	var balance, sum int64 = amount, 0
 	for i := int64(0); i < count; i++ {
@@ -38,22 +37,9 @@ func DoubleAvg(count, amount int64) int64 {
 	// 最大可用平均值
 	avg := max / count
 	// 二倍均值加最小金额 防止随机
-	maxAvg := avg*2 + min
+	maxAvg := avg * 2
 	rand.Seed(time.Now().Unix())
 	// 随机红包金额序列元素，把二倍均值作为随机的最大数
 	x := rand.Int63n(maxAvg) + min
 	return x
-}
-
-func lengthOfLongestSubstring(s string) int {
-	start := 0
-	end := 1
-	for _, v := range s {
-		if strings.Contains(s[start:end], string(v)) {
-			start++
-		} else {
-			end++
-		}
-	}
-	return end - start
 }
