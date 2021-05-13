@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+// http中间件 https://blog.huoding.com/2019/01/31/716
+
 func main() {
 	mux1 := http.NewServeMux()
 	mux1.HandleFunc("/mux1", func(w http.ResponseWriter, r *http.Request) {
